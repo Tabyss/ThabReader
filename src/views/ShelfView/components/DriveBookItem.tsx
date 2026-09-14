@@ -1,4 +1,4 @@
-import type { BookMeta } from "../../App";
+import type { BookMeta } from "../../../App";
 
 const DriveBookItem: React.FC<{
     book: BookMeta;

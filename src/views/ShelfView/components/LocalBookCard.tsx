@@ -1,7 +1,7 @@
 import ePub from "epubjs";
 import { get } from "idb-keyval";
 import { useState, useEffect } from "react";
-import type { BookMeta } from "../../App";
+import type { BookMeta } from "../../../App";
 import { RiDeleteBin5Line } from "react-icons/ri";
 
 const LocalBookCard: React.FC<{

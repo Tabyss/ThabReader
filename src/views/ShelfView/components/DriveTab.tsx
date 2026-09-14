@@ -1,4 +1,4 @@
-import type { BookMeta } from "../../App";
+import type { BookMeta } from "../../../App";
 import DriveBookItem from "./DriveBookItem";
 
 const DriveTab: React.FC<{
@@ -8,7 +8,7 @@ const DriveTab: React.FC<{
     onDownloadBook: (book: BookMeta) => void;
 }> = ({ driveBooks, localBooks, downloadingId, onDownloadBook }) => {
     return (
-        <div className="mt-6">
+        <div className="mt-2">
             <div className="mb-5">
                 <p className="text-xs opacity-60 font-medium">
                     * Only displays files (EPUB/PDF) from the{" "}
@@ -18,7 +18,7 @@ const DriveTab: React.FC<{
 
             {driveBooks.length === 0 ? (
                 <div className="h-40 flex items-center justify-center border-2 border-dashed border-[#333333] rounded-2xl">
-                    <p className="opacity-40 italic font-medium">
+                    <p className="opacity-40 italic font-medium text-center">
                         There are no books in Google Drive. Please click "Sync
                         Drive" above.
                     </p>

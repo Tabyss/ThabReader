@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ShelfView } from "./views/ShelfView";
+import { ShelfView } from "./views/ShelfView/ShelfView";
 import { ReaderView } from "./views/ReaderView";
 
 export interface BookMeta {

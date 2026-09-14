@@ -1,13 +1,14 @@
 import { keys, set, del, get } from "idb-keyval";
 import { useState, useEffect } from "react";
-import type { BookMeta } from "../App";
+import type { BookMeta } from "../../App";
 import {
     initGoogleAuth,
     fetchDriveFiles,
     downloadDriveFile,
-} from "../services/gdriveAuth";
-import DriveTab from "./ShelfView/DriveTab";
-import LocalTab from "./ShelfView/LocalTab";
+} from "../../services/gdriveAuth";
+import DriveTab from "./components/DriveTab";
+import LocalTab from "./components/LocalTab";
+import { AiOutlineCloudSync, AiOutlineSync } from "react-icons/ai";
 
 interface ShelfViewProps {
     onOpenBook: (book: BookMeta) => void;
@@ -146,32 +147,32 @@ export const ShelfView: React.FC<ShelfViewProps> = ({ onOpenBook }) => {
                 <button
                     onClick={handleGoogleLogin}
                     disabled={isSyncing}
-                    className="w-max bg-[#333333] hover:bg-[#222222] border border-[#333333] text-white px-5 py-2 rounded-full font-semibold transition-colors disabled:opacity-50"
+                    className="w-max bg-[#333333] hover:bg-[#222222] border border-[#333333] text-white px-2 py-2 rounded-full font-semibold transition-colors disabled:opacity-50"
                 >
-                    {isSyncing ? "Syncing..." : "Sync Drive"}
+                    {isSyncing ? <AiOutlineSync /> : <AiOutlineCloudSync />}
                 </button>
             </header>
 
             <div className="flex gap-6 border-b border-[#333333]/30 mb-2">
                 <button
                     onClick={() => setActiveTab("local")}
-                    className={`pb-3 text-sm font-bold uppercase tracking-widest transition-all border-b-2 ${
+                    className={`pb-3 text-[0.75rem] font-bold uppercase tracking-widest transition-all border-b-2 ${
                         activeTab === "local"
                             ? "border-[#333333] text-[#333333]"
                             : "border-transparent text-gray-500 hover:text-[#333333]"
                     }`}
                 >
-                    Local Library
+                    Library
                 </button>
                 <button
                     onClick={() => setActiveTab("drive")}
-                    className={`pb-3 text-sm font-bold uppercase tracking-widest transition-all border-b-2 ${
+                    className={`pb-3 text-[0.75rem] font-bold uppercase tracking-widest transition-all border-b-2 ${
                         activeTab === "drive"
                             ? "border-[#333333] text-[#333333]"
                             : "border-transparent text-gray-500 hover:text-[#333333]"
                     }`}
                 >
-                    Drive Files
+                    Drive
                 </button>
             </div>
 

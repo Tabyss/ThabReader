@@ -1,4 +1,4 @@
-import type { BookMeta } from "../../App";
+import type { BookMeta } from "../../../App";
 import LocalBookCard from "./LocalBookCard";
 
 const LocalTab: React.FC<{
@@ -9,7 +9,7 @@ const LocalTab: React.FC<{
     if (localBooks.length === 0) {
         return (
             <div className="h-40 flex items-center justify-center border-2 border-dashed border-[#333333] rounded-2xl mt-6">
-                <p className="opacity-40 italic font-medium">
+                <p className="opacity-40 italic font-medium text-center">
                     Shelf is empty. Open the Drive tab to download books.
                 </p>
             </div>
