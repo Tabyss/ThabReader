@@ -1,75 +1,27 @@
-# React + TypeScript + Vite
+# EPUB & PDF Reader Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive web application designed for seamlessly reading EPUB ebooks and PDF documents right from your browser. It features customized reading environments, progress tracking, local caching, and adaptive navigation layouts.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🔑 Key Features
 
-## React Compiler
+- **Multi-Format Support**: Read both **EPUB** and **PDF** files inside a unified, distraction-free interface.
+- **Persistent Reading State**: Automatically saves your last read position, custom font sizes, themes, and layout preferences using IndexedDB and `localStorage`.
+- **Customizable Themes**: Toggle effortlessly between multiple color modes designed for different lighting conditions:
+  - 🖤 **OLED** (Pure Black)
+  - 📜 **Sepia** (Warm, paper-like tone)
+  - 🌙 **Night** (Dark Slate Gray)
+  - ☀️ **Light** (Classic High Contrast)
+- **Flexible Navigation Layout**: Change the navigation bar (`BottomNav`) position dynamically to **Bottom**, **Left**, or **Right** to suit mobile or desktop viewing orientations.
+- **Reading Progress Tracking**: Real-time page indicator showing current page numbers and total completion percentage.
+- **Responsive Canvas Control**: Intelligent reflow and dynamic canvas resizing whenever navigation bars or screen dimensions change.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🛠️ Technology Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
-```
-
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
-```
+- **Framework**: [React](https://react.dev/) + [TypeScript](https://www.typescriptlang.org/)
+- **EPUB Engine**: [epubjs](https://github.com/futurepress/epub.js)
+- **Storage**: [idb-keyval](https://github.com/jakearchibald/idb-keyval) (IndexedDB) & Web `localStorage`
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
